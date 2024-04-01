@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="color-scheme" content="light dark">
-  <title>llama.cpp - chat</title>
+  <title>ChochaeGPT - Chat</title>
 
   <style>
     body {
@@ -207,12 +207,12 @@
     var slot_id = -1;
 
     const session = signal({
-      prompt: "This is a conversation between User and Llama, a friendly chatbot. Llama is helpful, kind, honest, good at writing, and never fails to answer any requests immediately and with precision.",
-      template: "{{prompt}}\n\n{{history}}\n{{char}}:",
+      prompt: "You are a question answering assistant. Answer the question as truthful and helpful as possible คุณคือผู้ช่วยตอบคำถาม จงตอบคำถามอย่างถูกต้องและมีประโยชน์ที่สุด",
+      template: "<s>[INST] <<SYS>>\n{{prompt}}\n<</SYS>>\n\n{{history}}\n{{char}} [/INST]",
       historyTemplate: "{{name}}: {{message}}",
       transcript: [],
       type: "chat",  // "chat" | "completion"
-      char: "Llama",
+      char: "ChochaeGPT",
       user: "User",
       image_selected: ''
     })
